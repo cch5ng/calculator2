@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function(evt) {
   var btnAddClickHandler = function() {
     var input = document.querySelector('input');
     num1 = parseInt(input.value);
-    console.log(typeof num1);
+    //console.log(typeof num1);
     
   //TODO need to break this out into a separate function which is a click handler for equals button; also need to fix scope issues for mathAdd access  
     mathAdd = add(num1);
@@ -65,14 +65,27 @@ document.addEventListener('DOMContentLoaded', function(evt) {
     
   };
 
+  var btnSubtractClickHandler = function() {
+    var input = document.querySelector('input');
+    num1 = parseInt(input.value);
+
+    mathSubtract = subtract(num1);
+  // console.log(mathSub(2));
+  };
+
   var btnEqualClickHandler = function() {
     var input = document.querySelector('input');
     num2 = parseInt(input.value);
     
     if (mathAdd) {
       //console.log(mathAdd(num2));
-      finalNum = mathAdd(num2)
+      finalNum = mathAdd(num2);
       input.setAttribute('value', finalNum);
+      mathAdd = null;
+    } else if (mathSubtract) {
+      finalNum = mathSubtract(num2);
+      input.setAttribute('value', finalNum);
+      mathSubtract = null;
     }
   };
 
@@ -80,13 +93,17 @@ document.addEventListener('DOMContentLoaded', function(evt) {
     num1 = null;
     num2 = null;
     finalNum = null;
-    
-    var input = document.querySelector('input');  
-    input.setAttribute('value', '0');  
+    mathAdd = null;
+    mathSubtract = null;
+    mathMultiply = null;
+    mathDivide = null;
+
+    var input = document.querySelector('input');
+    input.setAttribute('value', '0');
   };
 
   function btnNumClickHandler(btnVal) {
-    var input = document.querySelector('input');  
+    var input = document.querySelector('input');
     
     console.log('btnVal: ' + btnVal);
     console.log(typeof parseInt(btnVal));
@@ -103,6 +120,9 @@ document.addEventListener('DOMContentLoaded', function(evt) {
 
   var addBtn = document.querySelector('#btnAdd');
   addBtn.addEventListener('click', btnAddClickHandler);
+
+  var subtractBtn = document.querySelector('#btnSubtract');
+  subtractBtn.addEventListener('click', btnSubtractClickHandler);
 
   var equalBtn = document.querySelector('#btnEqual');
   equalBtn.addEventListener('click', btnEqualClickHandler);
