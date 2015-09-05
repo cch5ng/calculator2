@@ -70,8 +70,15 @@ document.addEventListener('DOMContentLoaded', function(evt) {
     num1 = parseInt(input.value);
 
     mathSubtract = subtract(num1);
-  // console.log(mathSub(2));
   };
+
+  var btnMultiplyClickHandler = function() {
+    var input = document.querySelector('input');
+    num1 = parseInt(input.value);
+
+    mathMultiply = multiply(num1);
+  };
+
 
   var btnEqualClickHandler = function() {
     var input = document.querySelector('input');
@@ -86,6 +93,10 @@ document.addEventListener('DOMContentLoaded', function(evt) {
       finalNum = mathSubtract(num2);
       input.setAttribute('value', finalNum);
       mathSubtract = null;
+    } else if (mathMultiply) {
+      finalNum = mathMultiply(num2);
+      input.setAttribute('value', finalNum);
+      mathMultiply = null;
     }
   };
 
@@ -123,6 +134,9 @@ document.addEventListener('DOMContentLoaded', function(evt) {
 
   var subtractBtn = document.querySelector('#btnSubtract');
   subtractBtn.addEventListener('click', btnSubtractClickHandler);
+
+  var multiplyBtn = document.querySelector('#btnMultiply');
+  multiplyBtn.addEventListener('click', btnMultiplyClickHandler);
 
   var equalBtn = document.querySelector('#btnEqual');
   equalBtn.addEventListener('click', btnEqualClickHandler);
