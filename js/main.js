@@ -79,11 +79,18 @@ document.addEventListener('DOMContentLoaded', function(evt) {
     mathMultiply = multiply(num1);
   };
 
+  var btnDivideClickHandler = function() {
+    var input = document.querySelector('input');
+    num1 = parseInt(input.value);
+
+    mathDivide = divide(num1);
+  };
 
   var btnEqualClickHandler = function() {
     var input = document.querySelector('input');
     num2 = parseInt(input.value);
-    
+
+//TODO refactor, can I move input.setAttribute() out as one line after the if conditions?
     if (mathAdd) {
       //console.log(mathAdd(num2));
       finalNum = mathAdd(num2);
@@ -97,6 +104,10 @@ document.addEventListener('DOMContentLoaded', function(evt) {
       finalNum = mathMultiply(num2);
       input.setAttribute('value', finalNum);
       mathMultiply = null;
+    } else if (mathDivide) {
+      finalNum = mathDivide(num2);
+      input.setAttribute('value', finalNum);
+      mathDivide = null;
     }
   };
 
@@ -137,6 +148,9 @@ document.addEventListener('DOMContentLoaded', function(evt) {
 
   var multiplyBtn = document.querySelector('#btnMultiply');
   multiplyBtn.addEventListener('click', btnMultiplyClickHandler);
+
+  var divideBtn = document.querySelector('#btnDivide');
+  divideBtn.addEventListener('click', btnDivideClickHandler);
 
   var equalBtn = document.querySelector('#btnEqual');
   equalBtn.addEventListener('click', btnEqualClickHandler);
