@@ -7,42 +7,44 @@
   <script src="js/main.js"></script>
 </head>
 <body>
-  <div class="space"></div>
-  <form>
-    <input type="text" id="uin"><br>
-  <div>
-    <button type="button" class="w2" id="btnClear">C col2</button>
-    <button type="button" class="w1" value="sign">+/-</button>
-    <button type="button" class="w1" id="btnDivide" value="div">/</button>
-  </div>
+  <div class="container">
+    <div class="calc">
+      <form>
+        <input type="text" id="uin" placeholder="0">
+        <div>
+          <button type="button" class="w2" id="btnClear">C</button>
+          <button type="button" class="w1 operator" value="sign">+/-</button>
+          <button type="button" class="w1" id="btnDivide" value="div">/</button>
+        </div>
 
-  <div>
-    <button  type="button" class="w1" id="btn7" value="7">7</button>
-    <button  type="button" class="w1"  id="btn8" value="8">8</button>
-    <button  type="button" class="w1"  id="btn9" value="9">9</button>
-    <button  type="button" class="w1" id="btnMultiply" value="mult">x</button>
-  </div>
+        <div>
+          <button  type="button" class="w1" id="btn7" value="7">7</button>
+          <button  type="button" class="w1"  id="btn8" value="8">8</button>
+          <button  type="button" class="w1"  id="btn9" value="9">9</button>
+          <button  type="button" class="w1 operator" id="btnMultiply" value="mult">x</button>
+        </div>
 
-  <div>
-    <button  type="button" class="w1"  id="btn4" value="4">4</button>
-    <button  type="button" class="w1"  id="btn5" value="5">5</button>
-    <button  type="button" class="w1"  id="btn6" value="6">6</button>
-    <button  type="button" class="w1" id="btnSubtract" value="sub">-</button>
-  </div>
+        <div>
+          <button  type="button" class="w1"  id="btn4" value="4">4</button>
+          <button  type="button" class="w1"  id="btn5" value="5">5</button>
+          <button  type="button" class="w1"  id="btn6" value="6">6</button>
+          <button  type="button" class="w1 operator" id="btnSubtract" value="sub">-</button>
+        </div>
 
-  <div>
-    <button  type="button"  class="w1"  id="btn1" value="1">1</button>
-    <button  type="button" class="w1"  id="btn2" value="2">2</button>
-    <button  type="button" class="w1"  id="btn3" value="3">3</button>
-    <button type="button" class="w1" id="btnAdd" value="add">+</button>
-  </div>
+        <div>
+          <button  type="button"  class="w1"  id="btn1" value="1">1</button>
+          <button  type="button" class="w1"  id="btn2" value="2">2</button>
+          <button  type="button" class="w1"  id="btn3" value="3">3</button>
+          <button type="button" class="w1 operator" id="btnAdd" value="add">+</button>
+        </div>
 
-  <div>
-    <button  type="button" class="w2" id="btn0" value="0">0 col2</button>
-    <button  type="button" class="w1" value="point">.</button>
-    <button  type="button" type="button" class="w1" id="btnEqual" value="equal">=</button>
-  </div>
-  </form>
-  
+        <div>
+          <button  type="button" class="w2" id="btn0" value="0">0</button>
+          <button  type="button" class="w1" value="point">.</button>
+          <button  type="button" type="button" class="w1 operator" id="btnEqual" value="equal">=</button>
+        </div>
+      </form>
+    </div><!--/.calc-->
+  </div><!--/.container-->
 </body>
 </html>
