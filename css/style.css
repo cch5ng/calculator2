@@ -10,6 +10,10 @@ html {
   box-sizing: inherit;
 }
 
+body {
+	background-color: #d0dae9;
+}
+
 .container {
 	width: 90%;
 	margin: 0 auto;
@@ -31,12 +35,34 @@ form {
 }
 
 input {
+	background-color: #847A59;
+	color: #fff;
 	width: 240px;
 	height: 65px;
 	padding: 0;
 	padding-left: 20px;
 	border: 1px inset;
 	font: normal normal normal normal 45px/normal '.HelveticaNeueDeskInterface-Regular';
+}
+
+input:focus {
+	color: #fff;
+}
+
+::-webkit-input-placeholder {
+	color: #fff;
+}
+
+:-moz-placeholder {
+	color: #fff;
+}
+
+::-moz-placeholder {
+	color: #fff;
+}
+
+:-ms-input-placeholder {
+	color: #fff;
 }
 
 button {
@@ -64,5 +90,5 @@ button {
 }
 
 .operator {
-
+	background-color: #F99471;
 }
