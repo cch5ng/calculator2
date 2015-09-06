@@ -112,3 +112,17 @@ input:focus, button:focus {
 .operator {
 	background-color: #F99471;
 }
+
+footer {
+}
+
+.footer {
+	padding-top: 15px;
+	text-align: center;
+	font: normal normal normal normal 1.0em/normal '.HelveticaNeueDeskInterface-Regular';
+	color: #000;
+}
+
+.ion-ios-heart {
+	color: #752610;
+}
