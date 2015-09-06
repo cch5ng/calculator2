@@ -43,7 +43,11 @@ input {
 	padding: 0;
 	padding-right: 10px;
 	border: 1px inset;
-	font: normal normal normal normal 26px/normal '.HelveticaNeueDeskInterface-Regular';
+	font: normal normal normal normal 40px/normal '.HelveticaNeueDeskInterface-Regular';
+}
+
+.small-font {
+	font: normal normal normal normal 23px/normal '.HelveticaNeueDeskInterface-Regular';
 }
 
 input:focus {
@@ -78,14 +82,14 @@ input:focus, button:focus {
   outline: none;
 }
 
-.w2 {
-	width: 120px;
+.w3 {
+	width: 180px;
 	height: 65px;
 	margin: 0;
 	padding: 0;
-	padding-left: 24px;
+/*	padding-left: 24px;*/
 	border: 1px inset;
-	text-align: left;
+	text-align: center;
 }
 
 .w1 {
