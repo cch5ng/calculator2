@@ -57,7 +57,11 @@ document.addEventListener('DOMContentLoaded', function(evt) {
   //TODO this is basically ok
   var btnAddClickHandler = function() {
     var input = document.querySelector('input');
-    num1 = parseInt(input.value);
+    if (input.value.indexOf('.') === -1) {
+      num1 = parseInt(input.value);
+    } else {
+      num1 = parseFloat(input.value);
+    }
 
     mathAdd = add(num1);
     num1Ar = [];
@@ -65,7 +69,11 @@ document.addEventListener('DOMContentLoaded', function(evt) {
 
   var btnSubtractClickHandler = function() {
     var input = document.querySelector('input');
-    num1 = parseInt(input.value);
+    if (input.value.indexOf('.') === -1) {
+      num1 = parseInt(input.value);
+    } else {
+      num1 = parseFloat(input.value);
+    }
 
     mathSubtract = subtract(num1);
     num1Ar = [];
@@ -73,7 +81,11 @@ document.addEventListener('DOMContentLoaded', function(evt) {
 
   var btnMultiplyClickHandler = function() {
     var input = document.querySelector('input');
-    num1 = parseInt(input.value);
+    if (input.value.indexOf('.') === -1) {
+      num1 = parseInt(input.value);
+    } else {
+      num1 = parseFloat(input.value);
+    }
 
     mathMultiply = multiply(num1);
     num1Ar = [];
@@ -81,7 +93,11 @@ document.addEventListener('DOMContentLoaded', function(evt) {
 
   var btnDivideClickHandler = function() {
     var input = document.querySelector('input');
-    num1 = parseInt(input.value);
+    if (input.value.indexOf('.') === -1) {
+      num1 = parseInt(input.value);
+    } else {
+      num1 = parseFloat(input.value);
+    }
 
     mathDivide = divide(num1);
     num1Ar = [];
@@ -89,7 +105,11 @@ document.addEventListener('DOMContentLoaded', function(evt) {
 
   var btnEqualClickHandler = function() {
     var input = document.querySelector('input');
-    num2 = parseInt(input.value);
+    if (input.value.indexOf('.') === -1) {
+      num2 = parseInt(input.value);
+    } else {
+      num2 = parseFloat(input.value);
+    }
 
 //TODO refactor, can I move input.setAttribute() out as one line after the if conditions?
     if (mathAdd) {
