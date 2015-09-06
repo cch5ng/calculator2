@@ -39,16 +39,18 @@ input {
 	color: #fff;
 	width: 240px;
 	height: 65px;
+	text-align: right;
 	padding: 0;
-	padding-left: 20px;
+	padding-right: 10px;
 	border: 1px inset;
-	font: normal normal normal normal 45px/normal '.HelveticaNeueDeskInterface-Regular';
+	font: normal normal normal normal 26px/normal '.HelveticaNeueDeskInterface-Regular';
 }
 
 input:focus {
 	color: #fff;
 }
 
+/* style placeholder text */
 ::-webkit-input-placeholder {
 	color: #fff;
 }
@@ -66,9 +68,14 @@ input:focus {
 }
 
 button {
-	/*align-items: stretch;*/
 	text-align: center;
+	/* overwrite default font size*/
 	font: normal normal normal normal 18px/normal '.HelveticaNeueDeskInterface-Regular';
+}
+
+/* get rid of default highlight */
+input:focus, button:focus {
+  outline: none;
 }
 
 .w2 {
