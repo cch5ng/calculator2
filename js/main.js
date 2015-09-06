@@ -95,21 +95,28 @@ document.addEventListener('DOMContentLoaded', function(evt) {
     if (mathAdd) {
       //console.log(mathAdd(num2));
       finalNum = mathAdd(num2);
-      input.setAttribute('value', finalNum);
+      //input.setAttribute('value', finalNum);
       mathAdd = null;
     } else if (mathSubtract) {
       finalNum = mathSubtract(num2);
-      input.setAttribute('value', finalNum);
+      //input.setAttribute('value', finalNum);
       mathSubtract = null;
     } else if (mathMultiply) {
       finalNum = mathMultiply(num2);
-      input.setAttribute('value', finalNum);
+      //input.setAttribute('value', finalNum);
       mathMultiply = null;
     } else if (mathDivide) {
       finalNum = mathDivide(num2);
-      input.setAttribute('value', finalNum);
+      //input.setAttribute('value', finalNum);
       mathDivide = null;
     }
+
+    console.log(finalNum.toString().length);
+    if (finalNum.toString().length > 10) {
+      input.setAttribute('class', 'small-font');
+    }
+    input.setAttribute('value', finalNum);
+
 
     num1Ar = [];
     // console.log(finalNum);
@@ -126,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function(evt) {
     num1Ar = [];
 
     var input = document.querySelector('input');
+    input.setAttribute('class', '');
     input.setAttribute('value', '0');
   };
 
@@ -137,9 +145,11 @@ document.addEventListener('DOMContentLoaded', function(evt) {
     
     if (typeof parseInt(btnVal) === 'number') {
       var btnValue = parseInt(btnVal);
-      num1Ar.push(btnValue);
-      var numStr = num1Ar.join('');
-      input.setAttribute('value', numStr);
+      if (num1Ar.length < 10) {
+        num1Ar.push(btnValue);
+        var numStr = num1Ar.join('');
+        input.setAttribute('value', numStr);
+      }
     }
   }
 
