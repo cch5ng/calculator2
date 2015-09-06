@@ -139,15 +139,23 @@ document.addEventListener('DOMContentLoaded', function(evt) {
 
   function btnNumClickHandler(btnVal) {
     var input = document.querySelector('input');
+    var numStr;
     
     //console.log('btnVal: ' + btnVal);
     //console.log(typeof parseInt(btnVal));
     
     if (typeof parseInt(btnVal) === 'number') {
-      var btnValue = parseInt(btnVal);
+      //var btnValue = parseInt(btnVal);
       if (num1Ar.length < 10) {
-        num1Ar.push(btnValue);
-        var numStr = num1Ar.join('');
+        num1Ar.push(btnVal);
+        numStr = num1Ar.join('');
+        input.setAttribute('value', numStr);
+      }
+    } else if (btnVal === '.') {
+//TODO if there is no decimal in the number so far, add it to the arr
+      if (num1Ar.indexOf(btnVal) === -1 && num1Ar.length < 9) {
+        num1.Ar.push(btnVal);
+        numStr = num1Ar.join('');
         input.setAttribute('value', numStr);
       }
     }
@@ -171,6 +179,10 @@ document.addEventListener('DOMContentLoaded', function(evt) {
 
   var equalBtn = document.querySelector('#btnEqual');
   equalBtn.addEventListener('click', btnEqualClickHandler);
+
+  var decBtn = document.querySelector('#btnDec');
+  decBtn.addEventListener('click', function() {
+    btnNumClickHandler(decBtn.value);}, false );
 
   var numBtn0 = document.querySelector('#btn0');
   numBtn0.addEventListener('click', function() {
