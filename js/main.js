@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', function(evt) {
       mathDivide = null,
       num1 = null,
       num2 = null,
-      finalNum = null;
+      finalNum = null,
+      num1Ar = [],
+      num2Ar = [];
 
 
   function add(x) {
@@ -56,13 +58,9 @@ document.addEventListener('DOMContentLoaded', function(evt) {
   var btnAddClickHandler = function() {
     var input = document.querySelector('input');
     num1 = parseInt(input.value);
-    //console.log(typeof num1);
-    
-  //TODO need to break this out into a separate function which is a click handler for equals button; also need to fix scope issues for mathAdd access  
+
     mathAdd = add(num1);
-  //console.log(mathAdd(5));
-  //expect 6
-    
+    num1Ar = [];
   };
 
   var btnSubtractClickHandler = function() {
@@ -70,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function(evt) {
     num1 = parseInt(input.value);
 
     mathSubtract = subtract(num1);
+    num1Ar = [];
   };
 
   var btnMultiplyClickHandler = function() {
@@ -77,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function(evt) {
     num1 = parseInt(input.value);
 
     mathMultiply = multiply(num1);
+    num1Ar = [];
   };
 
   var btnDivideClickHandler = function() {
@@ -84,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function(evt) {
     num1 = parseInt(input.value);
 
     mathDivide = divide(num1);
+    num1Ar = [];
   };
 
   var btnEqualClickHandler = function() {
@@ -109,6 +110,9 @@ document.addEventListener('DOMContentLoaded', function(evt) {
       input.setAttribute('value', finalNum);
       mathDivide = null;
     }
+
+    num1Ar = [];
+    // console.log(finalNum);
   };
 
   var btnClearClickHandler = function() {
@@ -119,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function(evt) {
     mathSubtract = null;
     mathMultiply = null;
     mathDivide = null;
+    num1Ar = [];
 
     var input = document.querySelector('input');
     input.setAttribute('value', '0');
@@ -127,12 +132,14 @@ document.addEventListener('DOMContentLoaded', function(evt) {
   function btnNumClickHandler(btnVal) {
     var input = document.querySelector('input');
     
-    console.log('btnVal: ' + btnVal);
-    console.log(typeof parseInt(btnVal));
+    //console.log('btnVal: ' + btnVal);
+    //console.log(typeof parseInt(btnVal));
     
     if (typeof parseInt(btnVal) === 'number') {
       var btnValue = parseInt(btnVal);
-      input.setAttribute('value', btnValue);
+      num1Ar.push(btnValue);
+      var numStr = num1Ar.join('');
+      input.setAttribute('value', numStr);
     }
   }
 
