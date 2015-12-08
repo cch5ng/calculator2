@@ -1,2 +1,2 @@
 # calculator2
-(in progress) JS Calculator (native JavaScript)
+JS Calculator (native JavaScript)
